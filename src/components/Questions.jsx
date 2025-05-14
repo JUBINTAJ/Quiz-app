@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { MdOutlineSpaceDashboard } from "react-icons/md";
-import { FaCircle } from "react-icons/fa";
-import { IoMdTime } from "react-icons/io";
-import { BiBookmark } from "react-icons/bi";
+import React, { useState } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 export default function Questions() {
-
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [page, setPage] = useState(0);
-
 
   const data = {
     questions: [
@@ -17,7 +11,6 @@ export default function Questions() {
         question: "What is React?",
         options: ["Library", "Framework", "Language", "Browser"],
         answer: "Library",
-        
       },
       {
         question: "What is JSX?",
@@ -28,14 +21,10 @@ export default function Questions() {
           "None",
         ],
         answer: "JavaScript XML",
-      },   {
+      },
+      {
         question: "Who is goat?",
-        options: [
-          "CR7",
-          "Ronaldo",
-          "Ronaldo jr DAD",
-          "",
-        ],
+        options: ["CR7", "Ronaldo", "Ronaldo jr DAD", ""],
         answer: "",
       },
     ],
@@ -69,7 +58,6 @@ export default function Questions() {
           </h1>
 
           <div className="flex items-center justify-end flex-wrap gap-2 mb-4">
-      
             <div className="text-sm md:text-lg font-semibold">
               {page + 1}/{totalQuestions}
             </div>
@@ -89,7 +77,9 @@ export default function Questions() {
               {questions[page]?.options.map((option) => (
                 <div
                   key={option}
-                  className={`p-3 rounded-md flex items-center cursor-pointer w-full md:w-60 group ${selectedAnswer==option?"bg-green-300":"bg-amber-100"}`}
+                  className={`p-3 rounded-md flex items-center cursor-pointer w-full md:w-60 group ${
+                    selectedAnswer == option ? "bg-green-300" : "bg-amber-100"
+                  }`}
                   onClick={() => setSelectedAnswer(option)}
                 >
                   <label className="flex items-center gap-2 cursor-pointer w-full">
@@ -111,11 +101,6 @@ export default function Questions() {
                       ></div>
                     </div>
                     <span className="ml-2">{option}</span>
-                    
-   
-
-    
-    
                   </label>
                 </div>
               ))}
