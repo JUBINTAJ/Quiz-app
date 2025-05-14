@@ -112,13 +112,7 @@ export default function Questions() {
                     </div>
                     <span className="ml-2">{option}</span>
                     
-      {questions[page]?.answer.map ((answer)=>(
-        <div key={answer}>
-
-          <span className="ml-auto text-red-600 text-sm font-semibold">
-            (answer)
-          </span>
-        </div>
+   
 
       ))                     
     }
